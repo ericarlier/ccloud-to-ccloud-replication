@@ -1,0 +1,24 @@
+{
+    "name": "ccloud-replicator",
+    "config": {
+        "connector.class": "io.confluent.connect.replicator.ReplicatorSourceConnector",
+        "tasks.max": "6",
+        "key.converter": "io.confluent.connect.replicator.util.ByteArrayConverter",
+        "value.converter": "io.confluent.connect.replicator.util.ByteArrayConverter",
+        "src.kafka.ssl.endpoint.identification.algorithm":"https",
+        "src.kafka.sasl.mechanism":"PLAIN",
+        "src.kafka.request.timeout.ms":"20000",
+        "src.kafka.bootstrap.servers":"${src_bootstrap_server}",
+        "src.kafka.retry.backoff.ms":"500",
+        "src.kafka.sasl.jaas.config":"org.apache.kafka.common.security.plain.PlainLoginModule required username=\"${src_cluster_api_key}\" password=\"${src_cluster_api_secret}\";",
+        "src.kafka.security.protocol":"SASL_SSL",
+        "dest.kafka.ssl.endpoint.identification.algorithm":"https",
+        "dest.kafka.sasl.mechanism":"PLAIN",
+        "dest.kafka.request.timeout.ms":"20000",
+        "dest.kafka.bootstrap.servers":"${dest_bootstrap_server}",
+        "dest.kafka.retry.backoff.ms":"500",
+        "dest.kafka.sasl.jaas.config":"org.apache.kafka.common.security.plain.PlainLoginModule required username=\"${dest_cluster_api_key}\" password=\"${dest_cluster_api_secret}\";",
+        "dest.kafka.security.protocol":"SASL_SSL",
+        "topic.regex":"USER_.*"
+        }
+    }

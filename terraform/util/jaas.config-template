@@ -1,0 +1,4 @@
+KafkaConnect {
+    org.apache.kafka.connect.rest.basic.auth.extension.PropertyFileLoginModule required
+    file="${confluent_home_value}/etc/kafka-connect/connect.password";
+};
