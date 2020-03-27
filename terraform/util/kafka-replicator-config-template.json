@@ -19,6 +19,6 @@
         "dest.kafka.retry.backoff.ms":"500",
         "dest.kafka.sasl.jaas.config":"org.apache.kafka.common.security.plain.PlainLoginModule required username=\"${dest_cluster_api_key}\" password=\"${dest_cluster_api_secret}\";",
         "dest.kafka.security.protocol":"SASL_SSL",
-        "topic.regex":"USER_.*"
+        "topic.regex":".*"
         }
     }
