@@ -32,3 +32,6 @@ Developed using https://github.com/confluentinc/ccloud-tools as a basis
 4. `terraform apply`
 5. if terraform applied successfully, you shall see a new sub-directory `load`: `cd load`
 6. You may need to wait a few minutes for the full infrastructure to be really up and then `./loadReplicator.sh` -> This script will load the replicator config through the Kafka Connect REST API
+
+## License
+The project is licensed under the Apache 2 license.
